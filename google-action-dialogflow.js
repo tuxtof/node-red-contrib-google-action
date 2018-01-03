@@ -19,7 +19,7 @@ module.exports = function(RED) {
     "use strict";
 
 
-    const { DialogflowApp } = require('actions-on-google').DialogflowApp;
+    const DialogflowApp = require('actions-on-google').DialogflowApp;
 
     const express = require('express');
     const https = require("https");
