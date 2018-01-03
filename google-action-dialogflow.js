@@ -1,6 +1,6 @@
 /*****
 
-node-red-contrib-google-action - A Node Red node to handle actions from Google Actions
+node-red-contrib-google-actionflow - A Node Red node to handle actions from Google Actions
 
 MIT License
 
@@ -18,7 +18,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 module.exports = function(RED) {
     "use strict";
 
-    const ActionsSdkApp = require('actions-on-google').ActionsSdkApp;
+
+    const { DialogflowApp } = require('actions-on-google').DialogflowApp;
 
     const express = require('express');
     const https = require("https");
@@ -28,11 +29,11 @@ module.exports = function(RED) {
     const bodyParser = require('body-parser');
 
     // Map of app handlers
-    // ActionsSdkApp can't be cloned so we need to keep a central copy.
+    // DialogflowApp can't be cloned so we need to keep a central copy.
 
     var appMap = new Map();
 
-    function GoogleActionIn(n) {
+    function GoogleActionDialogflowIn(n) {
         RED.nodes.createNode(this,n);
 
         var node = this;
@@ -55,7 +56,8 @@ module.exports = function(RED) {
         // Handler for requests
         expressApp.all(node.url, (request, response) => {
 
-            var app = new ActionsSdkApp({ request, response });
+            var app = new DialogflowApp({ request, response });
+
             app.handleRequest(function() {
 
                 appMap.set(app.getConversationId(), app);
@@ -95,10 +97,10 @@ module.exports = function(RED) {
         });
 
     }
-    RED.nodes.registerType("google-action in",GoogleActionIn);
+    RED.nodes.registerType("google-action-dialogflow in",GoogleActionDialogflowIn);
 
 
-    function GoogleActionOut(n) {
+    function GoogleActionDialogflowOut(n) {
         RED.nodes.createNode(this,n);
         var node = this;
 
@@ -118,5 +120,5 @@ module.exports = function(RED) {
             }
         });
     }
-    RED.nodes.registerType("google-action response",GoogleActionOut);
+    RED.nodes.registerType("google-action-dialogflow response",GoogleActionDialogflowOut);
 }

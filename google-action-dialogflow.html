@@ -12,7 +12,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 
-<script type="text/x-red" data-template-name="google-action in">
+<script type="text/x-red" data-template-name="google-action-dialogflow in">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" >
@@ -39,8 +39,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="google-action in">
-    <p>Creates an end-point for receiving requests from Google Actions.</p>
+<script type="text/x-red" data-help-name="google-action-dialogflow in">
+    <p>Creates an end-point for receiving requests from Google Actions wit Actionflow enabled.</p>
     <h3>Outputs</h3>
     <dl class="message-properties">
         <dt>conversationId<span class="property-type">string</span><dt>
@@ -61,7 +61,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         <dt>dialogState<span class="property-type">object</span></dt>
         <dd>An object that can be used to store state information between turns of the conversation.</dd>
         <dt>payload<span class="property-type">string</span></dt>
-        <dd>The raw text of the user's spoken or typed input.</dd>
+        <dd>The raw text of the users spoken or typed input.</dd>
     </dl>
     <h3>Details</h3>
     <p>The node will listen for incoming action requests from Google Actions.</p>
@@ -69,7 +69,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        must include an Google Action Response node to complete the request.</p>
 </script>
 
-<script type="text/x-red" data-template-name="google-action response">
+<script type="text/x-red" data-template-name="google-action-dialogflow response">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name">
@@ -77,7 +77,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <div class="form-tips">The messages sent to this node must originate from a Google Action input node.</span></div>
 </script>
 
-<script type="text/x-red" data-help-name="google-action response">
+<script type="text/x-red" data-help-name="google-action-dialogflow response">
     <p>Sends responses back to requests received from a Google Action input node.</p>
 
     <h3>Inputs</h3>
@@ -100,7 +100,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <script type="text/javascript">
 (function() {
-    RED.nodes.registerType('google-action in',{
+    RED.nodes.registerType('google-action-dialogflow in',{
         category: 'input',
         color:"rgb(131, 231, 174)",
         defaults: {
@@ -126,7 +126,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         }
     });
 
-    RED.nodes.registerType('google-action response',{
+    RED.nodes.registerType('google-action-dialogflow response',{
         category: 'output',
         color:"rgb(131, 231, 174)",
         defaults: {
