@@ -66,6 +66,7 @@ module.exports = function(RED) {
                             conversationId: app.getUser().userId,
                             intent: app.getIntent(),
                             userId: app.getUser().userId,
+                            context: app.getContexts(),
                             // dialogState: app.getDialogState(),
                             closeConversation: true,
                         };
