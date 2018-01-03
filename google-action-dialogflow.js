@@ -63,10 +63,10 @@ module.exports = function(RED) {
                 appMap.set(app.getConversationId(), app);
 
                 var msg = {topic: node.topic,
-                            conversationId: app.getConversationId(),
+                            // conversationId: app.getConversationId(),
                             intent: app.getIntent(),
                             userId: app.getUser().userId,
-                            dialogState: app.getDialogState(),
+                            // dialogState: app.getDialogState(),
                             closeConversation: true,
                         };
 
