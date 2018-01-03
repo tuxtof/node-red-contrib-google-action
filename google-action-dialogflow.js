@@ -60,7 +60,7 @@ module.exports = function(RED) {
 
             app.handleRequest(function() {
 
-                appMap.set(app.app.getUser().userId, app);
+                appMap.set(app.getUser().userId, app);
 
                 var msg = {topic: node.topic,
                             conversationId: app.getUser().userId,
