@@ -15,15 +15,7 @@ A response can either complete the processing of the action or can request furth
 
 The [action.json](https://github.com/DeanCording/node-red-contrib-google-action/blob/master/action.json) file is used to configure your app on Google Assistant.  The main thing you will need to change is the url of your Node Red server.
 
-To deploy your app, you will need an account on [Google Actions](https://developers.google.com/actions/).  Create a new project in the console and make a note of the project id.
-
-Use the [gaction CLI](https://developers.google.com/actions/tools/gactions-cli) utility to publish your app onto Google Assistant.
-
-`gactions test -preview_mins 9999999 -action_package action.json -project your-project-id`
-
-You can test you app using the simulator in the Google Actions console or from any device linked to your Google account. To access your app say:
-
-`Hey Google, talk to my test app`
+To deploy your app, you will need an account on [Google Actions](https://developers.google.com/actions/).  Create a new Dialogflow project in the console and correctly set webhooks.
 
 Be aware that Google Assistant isn't really intended to run private apps.  It is possible to have a private app by keeping your app in test mode perpetually.  One of the difficulties though is that Google requires your app to have a unique name from any other app published by anyone else and you can't use any registered brand name.
 
