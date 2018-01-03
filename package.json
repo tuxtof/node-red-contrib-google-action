@@ -1,6 +1,10 @@
 {
   "name": "node-red-contrib-google-action-dialogflow",
+<<<<<<< HEAD
   "version": "0.5.1",
+=======
+  "version": "0.5.0",
+>>>>>>> d510185953d2df8646d402f15671c70f51853379
   "description": "A node-red node for interfacing with actions from Google Assistant based on Dialogflow.",
   "dependencies": {
     "actions-on-google": "1.6.*",
